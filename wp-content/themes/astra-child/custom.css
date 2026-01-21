@@ -1,0 +1,3608 @@
+/* 
+  Henry Hates Hiking — Custom CSS Overrides
+  Loaded inline last to override Astra + Elementor
+*/
+
+/* ===============================================
+   GLOBAL SPACING & RESET
+   =============================================== */
+
+:root{
+  --pad-d: 400px;
+  --pad-t: 24px;
+  --pad-m: 50px;
+}
+
+/* Normal content padding */
+.page .entry-content > :not(.alignfull):not(.alignwide),
+.single .entry-content > :not(.alignfull):not(.alignwide) {
+  padding-inline: var(--pad-d) !important;
+  box-sizing: border-box;
+}
+@media (max-width:1024px){
+  .page .entry-content > :not(.alignfull):not(.alignwide),
+  .single .entry-content > :not(.alignfull):not(.alignwide) {
+    padding-inline: var(--pad-t) !important;
+  }
+}
+@media (max-width:768px){
+  .page .entry-content > :not(.alignfull):not(.alignwide),
+  .single .entry-content > :not(.alignfull):not(.alignwide) {
+    padding-inline: var(--pad-m) !important;
+  }
+}
+
+/* Full-width padding */
+.page .entry-content > .alignfull,
+.single .entry-content > .alignfull {
+  width:100%;
+  max-width:100%;
+  margin-left:0;
+  margin-right:0;
+  padding-inline: var(--pad-d) !important;
+  box-sizing:border-box;
+}
+@media (max-width:1024px){
+  .page .entry-content > .alignfull,
+  .single .entry-content > .alignfull {
+    padding-inline: var(--pad-t) !important;
+  }
+}
+@media (max-width:768px){
+  .page .entry-content > .alignfull,
+  .single .entry-content > .alignfull {
+    padding-inline: var(--pad-m) !important;
+  }
+}
+
+/* Cover block padding */
+.entry-content .wp-block-cover .wp-block-cover__inner-container{
+  padding-inline: var(--pad-d) !important;
+  box-sizing:border-box;
+}
+@media (max-width:1024px){
+  .entry-content .wp-block-cover .wp-block-cover__inner-container{
+    padding-inline: var(--pad-t) !important;
+  }
+}
+@media (max-width:768px){
+  .entry-content .wp-block-cover .wp-block-cover__inner-container{
+    padding-inline: var(--pad-m) !important;
+  }
+}
+
+/* Background group padding */
+.entry-content .wp-block-group.has-background,
+.entry-content .wp-block-columns.has-background,
+.entry-content .wp-block-group[style*="background"],
+.entry-content .wp-block-columns[style*="background"]{
+  padding-inline: var(--pad-d) !important;
+  box-sizing:border-box;
+}
+@media (max-width:1024px){
+  .entry-content .wp-block-group.has-background,
+  .entry-content .wp-block-columns.has-background,
+  .entry-content .wp-block-group[style*="background"],
+  .entry-content .wp-block-columns[style*="background"]{
+    padding-inline: var(--pad-t) !important;
+}}
+@media (max-width:768px){
+  .entry-content .wp-block-group.has-background,
+  .entry-content .wp-block-columns.has-background,
+  .entry-content .wp-block-group[style*="background"],
+  .entry-content .wp-block-columns[style*="background"]{
+    padding-inline: var(--pad-m) !important;
+}}
+
+/* Media safety */
+.entry-content img,
+.entry-content .wp-block-image img,
+.entry-content iframe,
+.entry-content .wp-block-embed {
+  max-width:100%;
+  height:auto;
+  display:block;
+}
+
+/* Headings – disable forced lowercase */
+h1, h2, h3, h4, h5, h6,
+.entry-title, .site-title,
+.wp-block-heading, .uagb-heading-text {
+  text-transform: none !important;
+}
+
+/* Transparent header on hero */
+.site-header {
+  background: transparent;
+  position: relative;
+  z-index: 20;
+}
+
+/* Parallax hero */
+.hero-parallax {
+  position: relative;
+  min-height: 60vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: #fff;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.hero-parallax .wp-block-cover__inner-container {
+  padding: 6rem 2rem;
+}
+@media (max-width: 1024px){
+  .hero-parallax { background-attachment: scroll; }
+}
+
+/* Home spacing override */
+.home :root{
+  --pad-d: 24px;
+  --pad-t: 18px;
+  --pad-m: 14px;
+}
+
+.home .entry-content > :not(.alignfull):not(.alignwide){
+  padding-inline: var(--pad-d) !important;
+}
+@media (max-width:1024px){
+  .home .entry-content > :not(.alignfull):not(.alignwide){
+    padding-inline: var(--pad-t) !important;
+  }
+}
+@media (max-width:768px){
+  .home .entry-content > :not(.alignfull):not(.alignwide){
+    padding-inline: var(--pad-m) !important;
+  }
+}
+
+/* Full-width inner padding for home */
+.home .entry-content > .alignfull{
+  padding-inline: clamp(12px, 4vw, 20px) !important;
+  max-width: 100%;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* ===============================================
+   ABOUT / WHO AM I SECTION
+   =============================================== */
+
+.hh-about-block {
+  margin-top: -10px !important;
+  margin-bottom: 40px !important;
+}
+
+.hh-about-card {
+  background: linear-gradient(135deg, #0b302c 0%, #06201d 100%);
+  padding: 50px 40px;
+  border-radius: 30px;
+  color: #ffffff !important;
+  box-shadow: 0 25px 65px rgba(0,0,0,0.35);
+}
+
+.hh-about-inner {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.hh-about-image img {
+  width: 100%;
+  border-radius: 500px;
+  display: block;
+}
+
+.hh-about-eyebrow {
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  margin-bottom: 6px;
+  color: rgba(255,255,255,0.75);
+}
+
+.hh-about-title {
+  font-size: 38px;
+  margin: 0 0 20px;
+  color: #ffffff !important;
+}
+
+.hh-about-text p {
+  font-size: 17px;
+  line-height: 1.6;
+  margin-bottom: 18px;
+  color: rgba(255,255,255,0.88) !important;
+}
+
+.hh-about-btn {
+  display: inline-block;
+  margin-top: 10px;
+  background: #49A977;
+  padding: 16px 34px;
+  border-radius: 40px;
+  color: #0d2b23 !important;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+  transition: transform 0.2s ease;
+}
+.hh-about-btn:hover {
+  transform: translateY(-3px);
+}
+
+/* Mobile */
+@media (max-width: 768px){
+  .hh-about-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .hh-about-image {
+    max-width: 240px;
+    margin: 0 auto 20px;
+  }
+}
+
+
+/* ===============================================
+   MOBILE SHARPNESS FIX (global)
+   =============================================== */
+
+@media (max-width: 768px) {
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+  }
+  .site,
+  .site-content,
+  .ast-container,
+  .entry-content {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+/* ===============================================
+   TRAILS PAGE — SAFE PADDING OVERRIDE
+   =============================================== */
+
+.page-id-1644 {
+  --pad-d: 24px;
+  --pad-t: 18px;
+  --pad-m: 14px;
+}
+
+/* ===============================================
+   GEAR PAGE — INTRO & KITS
+   =============================================== */
+
+.gear-intro-wrap {
+  padding-inline: 0 !important;
+  margin-inline: auto !important;
+  max-width: 800px;
+}
+
+.gear-intro-wrap .hh-gear-intro {
+  background: #F6F8F7;
+  border: 1px solid #E2EAE6;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  padding: 1.8rem 1.6rem;
+  font-size: 1.04rem;
+  line-height: 1.7;
+  margin: 2rem 0 3rem 0;
+}
+
+/* KIT GRID */
+.hh-gear-kits .hh-kits-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+@media (max-width: 768px){
+  .page-id-1639 .hh-gear-kits .hh-kits-wrapper {
+    grid-template-columns: 1fr;
+    gap: 16px;
+
+    /* THIS is the "make it wider" part */
+    max-width: none !important;
+    width: 100% !important;
+    margin: 0 !important;
+
+    /* match homepage section side padding */
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+
+    /* keep your top/bottom spacing */
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    box-sizing: border-box;
+  }
+}
+
+
+/* KIT MODAL */
+.hh-gear-kits .hh-kit-modal {
+  display: none !important;
+  position: fixed !important;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  z-index: 9999;
+  padding: 24px;
+  align-items: center;
+  justify-content: center;
+}
+.hh-gear-kits .hh-kit-modal.is-open {
+  display: flex !important;
+}
+
+.hh-gear-kits .hh-kit-modal-inner {
+  background: #ffffff;
+  max-width: 680px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 22px;
+  padding: 24px 26px 28px;
+  box-shadow: 0 18px 55px rgba(0,0,0,0.7);
+  position: relative;
+}
+
+.hh-gear-kits .hh-kit-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+body.hh-kit-modal-open {
+  overflow: hidden;
+}
+
+
+
+
+
+
+
+
+/************************************
+  FEATURED TRAILS – TICKER CAROUSEL
+*************************************/
+
+/* Outer wrapper just takes full width of content */
+.hhh-featured-wrapper{
+  width: 100%;
+}
+
+/* Green rounded panel – same vibe as Who Am I */
+.hhh-featured-section{
+  width: 100%;
+  max-width: 1120px; /* desktop width, similar to your big cards */
+  margin: 40px auto 72px;
+  padding: 40px 32px 48px;
+  border-radius: 32px;
+  background: radial-gradient(circle at 20% 20%, #0e2f28 0%, #072421 70%, #031b19 100%);
+  box-shadow: 0 26px 80px rgba(0,0,0,0.6);
+  box-sizing: border-box;
+  color: #ffffff;
+}
+
+.hhh-featured-title{
+  text-align: center;
+  font-size: clamp(28px, 4vw, 34px);
+  margin: 0 0 26px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ffffff;   /* force white like Who Am I */
+}
+
+/* === Carousel frame === */
+.hhh-featured-carousel{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hhh-featured-viewport{
+  overflow: hidden;
+  width: 100%;
+}
+
+.hhh-featured-track{
+  display: flex;
+  align-items: stretch;
+  gap: 20px;
+  will-change: transform;
+}
+
+/* === Cards (DESKTOP) – tall, thin, good for mobile photos === */
+.hhh-featured-card{
+  flex: 0 0 340px;                    /* THIN card – about 1/3 panel width */
+  max-width: 340px;
+  box-sizing: border-box;
+}
+
+.hhh-featured-link{
+  display: block;
+  background: #ffffff;
+  color: #0f1f1f;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 14px 40px rgba(0,0,0,0.35);
+  text-decoration: none;
+}
+
+/* image: tall & vertical friendly */
+.hhh-featured-img-wrap{
+  width: 100%;
+  height: 360px;
+  overflow: hidden;
+}
+
+.hhh-featured-img-wrap img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* card body */
+.hhh-featured-body{
+  padding: 16px 18px 20px;
+}
+
+.hhh-featured-body h3{
+  margin: 4px 0 4px;
+  font-size: 18px;
+  color: #0f1f1f;
+}
+
+.hhh-featured-location{
+  font-size: 14px;
+  color: #6a7175;
+  margin: 0 0 8px;
+}
+
+.hhh-featured-stats{
+  font-size: 14px;
+  margin: 0 0 8px;
+  line-height: 1.4;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  align-items: center;
+  color: #0f1f1f;
+}
+
+.hhh-featured-diff{
+  margin: 0 0 10px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.hhh-featured-snippet{
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #33393c;
+}
+
+/* === Arrows – desktop === */
+.hhh-featured-nav{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: #49A977;
+  color: #ffffff;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.50);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 22px;
+  line-height: 1;
+  transition:
+    transform .15s ease,
+    box-shadow .15s ease,
+    background .15s ease;
+  z-index: 5;
+}
+
+.hhh-featured-prev{ left: 10px; }
+.hhh-featured-next{ right: 10px; }
+
+.hhh-featured-nav:hover{
+  transform: translateY(-50%) translateY(-1px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.60);
+  background: #3f9870;
+}
+
+.hhh-featured-nav:active{
+  transform: translateY(-50%);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.55);
+}
+
+/* === CTA under carousel === */
+.hhh-featured-cta{
+  text-align: center;
+  margin-top: 32px;
+}
+
+.hhh-featured-cta-btn{
+  display: inline-block;
+  background: #49A977;
+  color: #06100d;
+  padding: 13px 26px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 800;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.55);
+  border: 1px solid rgba(255,255,255,0.22);
+  transition: all .2s ease;
+}
+
+.hhh-featured-cta-btn:hover{
+  background: #3f9870;
+  transform: translateY(-1px);
+  box-shadow: 0 14px 36px rgba(0,0,0,0.65);
+}
+
+.hhh-featured-cta-btn:active{
+  transform: translateY(0);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.55);
+}
+
+/* =====================================
+   MOBILE – one wide card + higher arrows
+===================================== */
+@media (max-width: 768px){
+
+  .hhh-featured-section{
+    max-width: 100%;
+    margin: 32px auto 48px;
+    padding: 26px 14px 30px;   /* green almost touches screen edges */
+    border-radius: 26px;
+  }
+
+  .hhh-featured-track{
+    gap: 12px;
+  }
+
+  /* one card per screen, wider look */
+  .hhh-featured-card{
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .hhh-featured-img-wrap{
+    height: 260px;
+  }
+
+  /* arrows smaller, pushed toward edges and over photo (not text) */
+  .hhh-featured-nav{
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+    top: 38%;            /* over lower part of photo */
+    box-shadow: 0 5px 16px rgba(0,0,0,0.55);
+  }
+
+  .hhh-featured-prev{ left: 4px; }
+  .hhh-featured-next{ right: 4px; }
+
+  .hhh-featured-cta{
+    margin-top: 22px;
+  }
+}
+
+
+
+
+/* ===============================
+   HERO SECTION – HENRY HATES HIKING
+   =============================== */
+
+.hhh-hero {
+  position: relative;
+  min-height: 70vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+  background-image: url("https://henryhateshiking.com/wp-content/uploads/2025/11/upscaled-hero-image-home-page-scaled.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+/* subtle dark overlay so text pops */
+.hhh-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.25) 0%,
+    rgba(0, 0, 0, 0.45) 55%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
+  z-index: 0;
+}
+
+.hhh-hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  padding: 4rem 1.5rem 4.5rem;
+}
+
+/* Title & subtitle */
+.hhh-hero-title {
+  margin: 0 0 1rem;
+  font-size: clamp(2.4rem, 4vw, 3.4rem);
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+.hhh-hero-subtitle {
+  margin: 0 0 2.2rem;
+  font-size: clamp(1rem, 1.25vw, 1.1rem);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+/* Buttons row */
+.hhh-hero-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Primary hero button – matches green pill buttons on homepage */
+.hhh-hero-btn {
+  display: inline-block;
+  padding: 0.95rem 2.5rem;
+  border-radius: 999px;
+  background: #49a977;
+  color: #06100d;
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+.hhh-hero-btn:hover {
+  background: #3f9870;
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+}
+
+.hhh-hero-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Secondary button style (outline) */
+.hhh-hero-btn--outline {
+  background: transparent;
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
+}
+
+.hhh-hero-btn--outline:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Mobile tweaks */
+@media (max-width: 768px) {
+  .hhh-hero {
+    min-height: 60vh;
+  }
+
+  .hhh-hero-inner {
+    padding: 3.25rem 1.25rem 3.5rem;
+  }
+
+  .hhh-hero-actions {
+    gap: 0.75rem;
+  }
+
+  .hhh-hero-btn {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+.hhh-hero-title {
+  color: rgba(255, 255, 255, 0.88) !important;
+}
+
+
+.hhh-hero {
+  background-attachment: fixed !important;
+}
+
+
+/* ================================
+   HERO HEIGHT — DESKTOP + MOBILE
+   ================================ */
+
+/* Desktop & large screens — full screen */
+.hhh-hero {
+    min-height: 100vh;
+}
+
+/* Mobile — slightly shorter hero */
+@media (max-width: 768px) {
+    .hhh-hero {
+        min-height: 100vh;   /* adjust to taste: try 80–90vh */
+    }
+}
+
+
+
+
+
+
+/* ================================
+   AFFILIATE DISCLOSURE CARD STYLE
+   ================================ */
+
+.hhh-info-card {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0;
+}
+
+.hhh-info-inner {
+  background: #ffffff;
+  border-radius: 26px;
+  padding: 32px 36px;
+  box-shadow: 0 22px 55px rgba(0,0,0,0.25);
+  color: #0f1f1f;
+  line-height: 1.65;
+}
+
+.hhh-info-title {
+  font-size: 28px;
+  margin: 0 0 12px;
+  color: #0f1f1f;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 800;
+}
+
+.hhh-info-sub {
+  font-size: 20px;
+  margin: 22px 0 10px;
+  color: #0f1f1f;
+  font-weight: 700;
+}
+
+.hhh-info-inner p {
+  margin: 0 0 16px;
+  font-size: 16px;
+  color: #343a3d;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .hhh-info-inner {
+    padding: 24px 22px;
+    border-radius: 22px;
+  }
+
+  .hhh-info-title {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .hhh-info-sub {
+    font-size: 18px;
+  }
+
+  .hhh-info-inner p {
+    font-size: 15px;
+  }
+}
+
+
+
+
+
+/* ================================
+   PRIVACY POLICY CARD STYLE
+   ================================ */
+
+.hhh-privacy-card {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0;
+}
+
+.hhh-privacy-inner {
+  background: #ffffff;
+  border-radius: 26px;
+  padding: 32px 36px;
+  box-shadow: 0 22px 55px rgba(0,0,0,0.25);
+  color: #0f1f1f;
+  line-height: 1.65;
+}
+
+.hhh-privacy-title {
+  font-size: 28px;
+  margin: 0 0 12px;
+  color: #0f1f1f;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 800;
+}
+
+.hhh-privacy-sub {
+  font-size: 20px;
+  margin: 22px 0 10px;
+  color: #0f1f1f;
+  font-weight: 700;
+}
+
+.hhh-privacy-inner p {
+  margin: 0 0 16px;
+  font-size: 16px;
+  color: #343a3d;
+}
+
+.hhh-privacy-list {
+  margin: 0 0 16px 20px;
+  padding: 0;
+}
+
+.hhh-privacy-list li {
+  margin-bottom: 8px;
+  font-size: 16px;
+  color: #343a3d;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .hhh-privacy-inner {
+    padding: 24px 22px;
+    border-radius: 22px;
+  }
+
+  .hhh-privacy-title {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .hhh-privacy-sub {
+    font-size: 18px;
+  }
+
+  .hhh-privacy-inner p,
+  .hhh-privacy-list li {
+    font-size: 15px;
+  }
+}
+
+
+
+
+
+/* ================================
+   TERMS & CONDITIONS CARD STYLE
+   ================================ */
+
+.hhh-terms-card {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0;
+}
+
+.hhh-terms-inner {
+  background: #ffffff;
+  border-radius: 26px;
+  padding: 32px 36px;
+  box-shadow: 0 22px 55px rgba(0,0,0,0.25);
+  color: #0f1f1f;
+  line-height: 1.65;
+}
+
+.hhh-terms-title {
+  font-size: 28px;
+  margin: 0 0 12px;
+  color: #0f1f1f;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 800;
+}
+
+.hhh-terms-sub {
+  font-size: 20px;
+  margin: 22px 0 10px;
+  color: #0f1f1f;
+  font-weight: 700;
+}
+
+.hhh-terms-inner p {
+  margin: 0 0 16px;
+  font-size: 16px;
+  color: #343a3d;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .hhh-terms-inner {
+    padding: 24px 22px;
+    border-radius: 22px;
+  }
+
+  .hhh-terms-title {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .hhh-terms-sub {
+    font-size: 18px;
+  }
+
+  .hhh-terms-inner p {
+    font-size: 15px;
+  }
+}
+
+
+
+
+
+/* ================================
+   WPForms — CUSTOM CARD STYLING
+   Form ID: 3318
+   Matches Henry Hates Hiking style
+   ================================ */
+
+#wpforms-form-3318 {
+  max-width: 480px;
+  margin: 32px auto;
+  padding: 24px 22px 26px;
+  background: #F6F8F7;
+  border-radius: 18px;
+  border: 1px solid #E2EAE6;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+/* Labels */
+#wpforms-form-3318 .wpforms-field-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #1E2A2F;
+  margin-bottom: 4px;
+}
+
+/* Inputs & textarea */
+#wpforms-form-3318 input[type="text"],
+#wpforms-form-3318 input[type="email"],
+#wpforms-form-3318 input[type="url"],
+#wpforms-form-3318 textarea {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid #CCD7D3;
+  padding: 12px 14px;
+  font-size: 0.95rem;
+  color: #1E2A2F;
+  background: #ffffff;
+  transition: all .18s ease;
+}
+
+#wpforms-form-3318 input[type="text"]:focus,
+#wpforms-form-3318 input[type="email"]:focus,
+#wpforms-form-3318 input[type="url"]:focus,
+#wpforms-form-3318 textarea:focus {
+  outline: none;
+  border-color: #49A977;
+  box-shadow: 0 0 0 2px rgba(73,169,119,0.25);
+}
+
+/* Field spacing */
+#wpforms-form-3318 .wpforms-field {
+  margin-bottom: 16px;
+}
+
+/* Submit button (matches homepage green buttons) */
+#wpforms-form-3318 .wpforms-submit-container {
+  text-align: center;
+}
+
+#wpforms-form-3318 button.wpforms-submit,
+#wpforms-form-3318 input[type="submit"].wpforms-submit {
+  display: inline-block;
+  background: #49A977;
+  color: #06100d;
+  padding: 13px 26px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.25);
+  font-weight: 800;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  cursor: pointer;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.55);
+  transition:
+    background .18s ease,
+    transform .18s ease,
+    box-shadow .18s ease;
+}
+
+#wpforms-form-3318 button.wpforms-submit:hover,
+#wpforms-form-3318 input[type="submit"].wpforms-submit:hover {
+  background: #3f9870;
+  transform: translateY(-1px);
+  box-shadow: 0 14px 36px rgba(0,0,0,0.65);
+}
+
+#wpforms-form-3318 button.wpforms-submit:active,
+#wpforms-form-3318 input[type="submit"].wpforms-submit:active {
+  transform: translateY(0);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.55);
+}
+
+/* Checkbox field styling */
+#wpforms-form-3318 .wpforms-field-checkbox label {
+  font-size: 0.9rem;
+  color: #1E2A2F;
+}
+
+/* Error styling alignment */
+#wpforms-form-3318 .wpforms-error {
+  color: #c11;
+  font-size: 0.85rem;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  #wpforms-form-3318 {
+    margin: 24px auto;
+    padding: 20px 16px 22px;
+  }
+}
+
+
+
+
+
+/* ===============================
+   GUIDES & CHECKLISTS – HERO CARD
+   =============================== */
+
+.hh-checklist-section {
+  padding: 40px 0 80px;
+}
+
+.hh-checklist-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.hh-checklist-title {
+  font-size: clamp(28px, 3vw, 34px);
+  margin: 0 0 10px;
+  color: #13212c;
+}
+
+.hh-checklist-subtitle {
+  margin: 0 0 32px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #4a555f;
+}
+
+/* Card wrapper */
+.hh-checklist-card {
+  background: #f6f8f7;
+  border-radius: 26px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.12);
+  padding: 32px 36px;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 40px;
+  align-items: center;
+}
+
+/* LEFT — icon */
+.hh-checklist-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.hh-checklist-icon-bubble {
+  width: 260px;
+  max-width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: 32px;
+  background: radial-gradient(circle at 20% 10%, #ffffff 0%, #f0f5f2 45%, #d8e7df 100%);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hh-checklist-icon-img {
+  width: 68%;
+  height: auto;
+  display: block;
+  animation: hhFloatIcon 4s ease-in-out infinite;
+}
+
+/* Float animation */
+@keyframes hhFloatIcon {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+/* RIGHT — override MailerLite look to match site */
+.hh-checklist-form {
+  text-align: left;
+}
+
+/* Base wrapper */
+#mlb2-32445849.ml-form-embedContainer .ml-form-embedWrapper {
+  background: #ffffff !important;
+  border-radius: 20px !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12) !important;
+  padding: 22px 22px 18px !important;
+  border: none !important;
+}
+
+/* Remove grey header gap if any */
+#mlb2-32445849 .ml-form-embedBody,
+#mlb2-32445849 .ml-form-successBody {
+  padding: 0 !important;
+}
+
+/* Inputs */
+#mlb2-32445849 .ml-form-fieldRow input {
+  border-radius: 999px !important;
+  border-color: #d9e2dd !important;
+  padding: 11px 14px !important;
+  font-size: 14px !important;
+}
+
+/* Checkbox row */
+#mlb2-32445849 .ml-form-checkboxRow label p {
+  font-size: 12px !important;
+  color: #4a555f !important;
+}
+
+/* Button – match your green pill buttons */
+#mlb2-32445849 .ml-form-embedSubmit button.primary {
+  background: #49A977 !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.12em !important;
+  font-weight: 800 !important;
+  font-size: 14px !important;
+  padding: 12px 20px !important;
+  color: #06100d !important;
+}
+
+#mlb2-32445849 .ml-form-embedSubmit button.primary:hover {
+  background: #3f9870 !important;
+  transform: translateY(-1px);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.35) !important;
+}
+
+/* ===============================
+   MOBILE
+   =============================== */
+
+@media (max-width: 768px) {
+  .hh-checklist-card {
+    grid-template-columns: 1fr;
+    padding: 24px 18px;
+    gap: 24px;
+  }
+
+  .hh-checklist-inner {
+    padding: 0 14px;
+  }
+
+  .hh-checklist-section {
+    padding: 24px 0 60px;
+  }
+
+  .hh-checklist-visual {
+    order: -1;
+  }
+
+  .hh-checklist-icon-bubble {
+    width: 220px;
+  }
+}
+
+
+
+
+
+
+
+
+/* =========================
+   HENRY HATES HIKING – GEAR KITS
+   ========================= */
+
+/* Mobile-first: horizontal scroll with scroll-snap */
+.hh-kits-wrapper {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  gap: 1.25rem;
+  padding: 2.5rem 1.5rem 3rem;
+  margin: 0 -1.5rem; /* edge-to-edge on small screens */
+}
+
+.hh-kits-wrapper::-webkit-scrollbar {
+  height: 6px;
+}
+.hh-kits-wrapper::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.7);
+  border-radius: 999px;
+}
+
+/* each card "slide" */
+.hh-kit {
+  flex: 0 0 82%;
+  scroll-snap-align: start;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 1.8rem 2rem 2rem;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.10);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e5e7eb;
+  border-top-width: 4px;
+  border-top-color: transparent;
+  cursor: pointer;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    border-color 0.18s ease,
+    background-color 0.18s ease;
+}
+
+/* hover/focus effect on card */
+.hh-kit:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 45px rgba(15, 23, 42, 0.16);
+  background-color: #ffffff;
+}
+
+/* ICON BADGES (emoji-as-icon) */
+.hh-kit-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin-bottom: 0.7rem;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.18);
+  transform-origin: center;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+/* hover animation for emoji "icons" */
+.hh-kit:hover .hh-kit-icon {
+  transform: translateY(-3px) scale(1.07) rotate(-2deg);
+  box-shadow: 0 13px 28px rgba(15, 23, 42, 0.26);
+}
+
+/* PER-KIT COLORS (border + icon background) */
+.hh-kit[data-kit-modal="starter"] {
+  border-top-color: #2e7e6f;
+}
+.hh-kit[data-kit-modal="starter"] .hh-kit-icon {
+  background: radial-gradient(circle at 30% 30%, #58b5a0, #2e7e6f);
+}
+
+.hh-kit[data-kit-modal="heat"] {
+  border-top-color: #f97316;
+}
+.hh-kit[data-kit-modal="heat"] .hh-kit-icon {
+  background: radial-gradient(circle at 30% 30%, #facc15, #f97316);
+}
+
+.hh-kit[data-kit-modal="scenic"] {
+  border-top-color: #3b82f6;
+}
+.hh-kit[data-kit-modal="scenic"] .hh-kit-icon {
+  background: radial-gradient(circle at 30% 30%, #93c5fd, #3b82f6);
+}
+
+.hh-kit[data-kit-modal="masochist"] {
+  border-top-color: #dc2626;
+}
+.hh-kit[data-kit-modal="masochist"] .hh-kit-icon {
+  background: radial-gradient(circle at 30% 30%, #fca5a5, #dc2626);
+}
+
+.hh-kit[data-kit-modal="overnight"] {
+  border-top-color: #8b5cf6;
+}
+.hh-kit[data-kit-modal="overnight"] .hh-kit-icon {
+  background: radial-gradient(circle at 30% 30%, #c4b5fd, #8b5cf6);
+}
+
+.hh-kit[data-kit-modal="friends"] {
+  border-top-color: #facc15;
+}
+.hh-kit[data-kit-modal="friends"] .hh-kit-icon {
+  background: radial-gradient(circle at 30% 30%, #fef3c7, #facc15);
+}
+
+/* TYPOGRAPHY */
+.hh-kit-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  color: #111827;
+}
+
+.hh-kit-desc {
+  color: #4b5563;
+  font-size: 0.98rem;
+  margin-bottom: 1rem;
+}
+
+.hh-kit-list {
+  list-style: disc;
+  margin: 0 0 1.5rem;
+  padding-left: 1.2rem;
+  color: #111827;
+  font-size: 0.95rem;
+}
+
+.hh-kit-list li {
+  margin-bottom: 0.25rem;
+}
+
+.hh-kit-list a {
+  color: #256b5f;
+  text-decoration: underline;
+}
+
+/* CTA button – still looks like a button but card is also clickable */
+/* CTA button – now Henry Hates Hiking green */
+.hh-kit-cta {
+  margin-top: auto;
+  padding: 0.85rem 1.9rem;
+  border-radius: 999px;
+  border: none;
+  background: #2E7E6F;      /* BRAND GREEN */
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  font-weight: 600;
+  cursor: pointer;
+  color: #ffffff;            /* white text */
+  transition:
+    background-color 0.18s ease,
+    color 0.18s ease,
+    box-shadow 0.18s ease,
+    transform 0.18s ease;
+}
+
+.hh-kit:hover .hh-kit-cta,
+.hh-kit-cta:hover {
+  background: #256B5F;       /* darker green hover */
+  color: #ffffff;
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.15);
+  transform: translateY(-1px);
+}
+
+
+/* DESKTOP / LARGE – switch to grid layout, no horizontal scroll */
+@media (min-width: 800px) {
+  .hh-kits-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3rem 1rem 4rem;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+    overflow: visible;
+    scroll-snap-type: none;
+  }
+
+  .hh-kit {
+    flex: initial;
+    scroll-snap-align: initial;
+  }
+}
+
+/* MODALS */
+.hh-kit-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(4px);
+  display: none;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem 1.5rem;
+  overflow-y: auto;
+  z-index: 9999;
+}
+
+.hh-kit-modal.is-open {
+  display: flex;
+}
+
+.hh-kit-modal-inner {
+  position: relative;
+  background: #ffffff;
+  padding: 2.1rem 2.3rem 2.4rem;
+  border-radius: 16px;
+  max-width: 650px;
+  width: 100%;
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.4);
+  animation: hh-modal-fade 0.25s ease;
+}
+
+@keyframes hh-modal-fade {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hh-kit-modal-close {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  color: #4b5563;
+  position: absolute;
+  top: 0.7rem;
+  right: 1rem;
+}
+
+.hh-kit-modal-inner h2 {
+  margin-top: 0;
+  font-size: 1.6rem;
+}
+
+.hh-kit-modal-inner p {
+  margin-bottom: 0.9rem;
+  color: #4b5563;
+}
+
+.hh-kit-modal-inner ul {
+  margin-top: 0.6rem;
+  padding-left: 1.2rem;
+  list-style: disc;
+}
+
+.hh-kit-modal-inner a {
+  color: #256b5f;
+  text-decoration: underline;
+}
+
+/* Prevent background scroll when a kit modal is open */
+body.hh-kit-modal-open {
+  overflow: hidden;
+}
+
+
+
+/* Fix disappearing close button (X) */
+.hh-kit-modal-close {
+  color: #374151 !important;       /* default dark gray */
+  transition: color 0.15s ease;
+}
+
+.hh-kit-modal-close:hover {
+  color: #111827 !important;       /* darker gray on hover */
+}
+
+
+
+
+/* Featured Gear Title */
+.hh-featured-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: #1F2937;
+}
+
+/* Wrapper styles */
+.hh-featured-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  padding: 1rem 0;
+  scroll-snap-type: x mandatory;
+  overflow-x: auto;
+}
+
+/* Individual card */
+.hh-featured-card {
+  background: #ffffff;
+  border: 1px solid #E5E7EB;
+  border-radius: 16px;
+  padding: 1.5rem;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  scroll-snap-align: center;
+  position: relative;
+}
+
+/* Hover animation */
+.hh-featured-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+/* Emoji/Icon */
+.hh-featured-icon {
+  font-size: 48px;
+  margin-bottom: 10px;
+  transition: transform 0.25s ease;
+}
+
+/* Make emojis pop on hover */
+.hh-featured-card:hover .hh-featured-icon {
+  transform: rotate(-4deg) scale(1.1);
+}
+
+/* Gear name */
+.hh-featured-name {
+  font-size: 1.25rem;
+  margin: 0.5rem 0;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* Description */
+.hh-featured-desc {
+  font-size: 0.95rem;
+  color: #4B5563;
+  margin-bottom: 1.25rem;
+}
+
+/* Button (matches site green) */
+.hh-featured-btn {
+  display: inline-block;
+  background: #2E7E6F;
+  color: #ffffff;
+  padding: 0.65rem 1.1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.hh-featured-btn:hover {
+  background: #256B5F;
+  transform: translateY(-2px);
+}
+
+/* Mobile scroll behavior */
+@media (max-width: 640px) {
+  .hh-featured-wrapper {
+    flex-wrap: nowrap;
+  }
+
+  .hh-featured-card {
+    min-width: 260px;
+  }
+}
+
+
+
+
+
+
+
+/* === FINAL MOBILE FIX: give cards breathing room so shadows show === */
+
+/* Gear kits: stack vertically with side padding */
+@media (max-width: 768px) {
+  .hh-kits-wrapper {
+    display: block !important;
+    overflow: visible !important;
+    padding: 2rem 1.25rem 3rem !important;  /* gutters on the sides */
+    margin: 0 auto !important;
+  }
+
+  .hh-kit {
+    max-width: 640px;
+    margin: 0 auto 1.75rem;  /* center card, space between */
+    flex: none !important;
+    scroll-snap-align: none !important;
+  }
+}
+
+/* Featured gear: same idea */
+@media (max-width: 768px) {
+  .hh-featured-wrapper {
+    display: block !important;
+    overflow: visible !important;
+    padding: 1rem 1.25rem 3rem !important;
+    margin: 0 auto !important;
+    flex-wrap: nowrap !important;
+  }
+
+  .hh-featured-card {
+    max-width: 640px;
+    margin: 0 auto 1.5rem;
+    flex: none !important;
+  }
+}
+
+/* Make sure nothing up the chain clips vertically */
+.hh-kits-wrapper,
+.hh-featured-wrapper {
+  overflow-y: visible !important;
+}
+
+
+
+/* === FORCE FEATURED GEAR CARDS TO CENTER === */
+
+/* Center the whole featured-gear content column */
+.hh-featured-gear {
+  padding-left: 1.25rem !important;
+  padding-right: 1.25rem !important;
+}
+
+/* Wrapper becomes a centered block column */
+.hh-featured-wrapper {
+  display: block !important;
+  max-width: 640px !important;   /* width of the column */
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Each card fills that centered column */
+.hh-featured-card {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  margin-bottom: 1.5rem !important;
+}
+
+
+
+
+
+
+/*************************************
+ * ABOUT PAGE (hh-about-v2)
+ *************************************/
+.hh-about-v2 {
+  background: #f9fafb;
+  padding: 3.5rem 1.5rem 4rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #111827;
+}
+
+.hh-about-v2-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ---------- HERO ---------- */
+.hh-about-v2-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.1fr);
+  gap: 2.25rem;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 2.4rem 2.3rem;
+  box-shadow: 0 18px 40px rgba(15,23,42,0.08);
+  margin-bottom: 3rem;
+}
+
+.hh-about-v2-eyebrow {
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #6b7280;
+  margin-bottom: 0.6rem;
+}
+
+.hh-about-v2-title {
+  font-size: clamp(2.1rem, 3.1vw, 2.7rem);
+  line-height: 1.1;
+  margin-bottom: 0.7rem;
+}
+
+.hh-about-v2-highlight {
+  color: #2E7E6F;
+}
+
+.hh-about-v2-lede {
+  font-size: 0.98rem;
+  color: #4b5563;
+  max-width: 30rem;
+  margin-bottom: 1.3rem;
+}
+
+.hh-about-v2-hero-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.3rem;
+  font-size: 0.94rem;
+  color: #4b5563;
+}
+
+.hh-about-v2-hero-list li {
+  display: flex;
+  gap: 0.55rem;
+  margin-bottom: 0.35rem;
+}
+
+.hh-about-v2-hero-list span:first-child {
+  font-size: 1.1rem;
+}
+
+.hh-about-v2-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 0.4rem;
+}
+
+.hh-about-v2-note {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+/* Buttons */
+.hh-about-v2-btn-primary,
+.hh-about-v2-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 1.9rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color .18s ease, color .18s ease,
+              box-shadow .18s ease, transform .18s ease, border-color .18s ease;
+}
+
+.hh-about-v2-btn-primary {
+  border: none;
+  background: #2E7E6F;
+  color: #ffffff;
+  box-shadow: 0 12px 30px rgba(15,23,42,0.18);
+}
+
+.hh-about-v2-btn-primary:hover {
+  background: #256B5F;
+  transform: translateY(-1px);
+  box-shadow: 0 16px 38px rgba(15,23,42,0.22);
+}
+
+.hh-about-v2-btn-ghost {
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  color: #111827;
+}
+
+.hh-about-v2-btn-ghost:hover {
+  background: #111827;
+  color: #ffffff;
+  border-color: #111827;
+  box-shadow: 0 12px 28px rgba(15,23,42,0.18);
+  transform: translateY(-1px);
+}
+
+/* Hero card */
+.hh-about-v2-card {
+  background: #f9fafb;
+  border-radius: 18px;
+  padding: 1.6rem 1.7rem 1.8rem;
+  box-shadow: 0 10px 24px rgba(15,23,42,0.08);
+  text-align: center;
+  border: 1px solid #e5e7eb;
+}
+
+.hh-about-v2-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 999px;
+  margin: 0 auto 0.9rem;
+  background: radial-gradient(circle at 30% 20%, #fde68a, #fb7185);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hh-about-v2-avatar span {
+  font-size: 3.2rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.hh-about-v2-name {
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+
+.hh-about-v2-tagline {
+  font-size: 0.86rem;
+  color: #4b5563;
+  margin-bottom: 0.3rem;
+}
+
+.hh-about-v2-meta {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+/* ---------- GENERIC SECTIONS ---------- */
+.hh-about-v2-section {
+  margin-bottom: 3rem;
+}
+
+.hh-about-v2-label {
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #6b7280;
+  margin-bottom: 0.6rem;
+}
+
+.hh-about-v2-heading {
+  font-size: 1.4rem;
+  margin-bottom: 1.3rem;
+}
+
+/* Tiles */
+.hh-about-v2-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.4rem;
+}
+
+.hh-about-v2-tile {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.3rem 1.4rem 1.5rem;
+  box-shadow: 0 14px 32px rgba(15,23,42,0.06);
+}
+
+.hh-about-v2-tile-icon {
+  font-size: 1.35rem;
+  margin-bottom: 0.45rem;
+}
+
+.hh-about-v2-tile h3 {
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.hh-about-v2-tile p {
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+/* Story + timeline */
+.hh-about-v2-story-wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
+  gap: 2.1rem;
+}
+
+.hh-about-v2-story,
+.hh-about-v2-timeline,
+.hh-about-v2-card-block,
+.hh-about-v2-final {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 1.8rem 1.9rem;
+  box-shadow: 0 16px 38px rgba(15,23,42,0.06);
+}
+
+.hh-about-v2-story h2 {
+  font-size: 1.35rem;
+  margin-bottom: 0.6rem;
+}
+
+.hh-about-v2-story p {
+  font-size: 0.95rem;
+  color: #4b5563;
+  margin-bottom: 0.75rem;
+}
+
+.hh-about-v2-story p:last-child {
+  margin-bottom: 0;
+}
+
+.hh-about-v2-timeline h3 {
+  font-size: 1.02rem;
+  margin-bottom: 0.7rem;
+}
+
+.hh-about-v2-timeline ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-left: 2px solid #e5e7eb;
+}
+
+.hh-about-v2-timeline li {
+  position: relative;
+  padding-left: 0.9rem;
+  margin-bottom: 0.85rem;
+}
+
+.hh-about-v2-timeline li::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: #2E7E6F;
+  position: absolute;
+  left: -6px;
+  top: 5px;
+}
+
+.hh-about-v2-timeline-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #9ca3af;
+}
+
+.hh-about-v2-timeline p {
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+/* Two-column card section */
+.hh-about-v2-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+.hh-about-v2-card-light {
+  background: #f9fafb;
+}
+
+.hh-about-v2-bullet-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.4rem 0 0;
+  font-size: 0.93rem;
+}
+
+.hh-about-v2-bullet-list li {
+  display: flex;
+  gap: 0.45rem;
+  align-items: flex-start;
+  margin-bottom: 0.3rem;
+  color: #111827;
+}
+
+.hh-about-v2-bullet-list span:first-child {
+  color: #2E7E6F;
+}
+
+/* Final CTA */
+.hh-about-v2-final {
+  text-align: center;
+}
+
+.hh-about-v2-final h2 {
+  font-size: 1.35rem;
+  margin-bottom: 0.5rem;
+}
+
+.hh-about-v2-final p {
+  font-size: 0.95rem;
+  color: #4b5563;
+  max-width: 32rem;
+  margin: 0 auto 1.3rem;
+}
+
+.hh-about-v2-fineprint {
+  font-size: 0.8rem;
+  color: #9ca3af;
+  margin-top: 0.2rem;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .hh-about-v2-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hh-about-v2-card {
+    margin-top: 1rem;
+  }
+
+  .hh-about-v2-grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .hh-about-v2-story-wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .hh-about-v2-grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .hh-about-v2 {
+    padding: 3rem 1rem 3.5rem;
+  }
+
+  .hh-about-v2-hero {
+    padding: 2rem 1.6rem;
+  }
+
+  .hh-about-v2-cta-row .hh-about-v2-btn-primary,
+  .hh-about-v2-cta-row .hh-about-v2-btn-ghost,
+  .hh-about-v2-final .hh-about-v2-btn-primary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hh-about-v2-story,
+  .hh-about-v2-timeline,
+  .hh-about-v2-card-block,
+  .hh-about-v2-final {
+    padding-inline: 1.4rem;
+  }
+}
+
+
+
+
+
+/* Use a different hero image on mobile */
+@media (max-width: 768px) {
+  .hhh-hero {
+    background-image: url("https://henryhateshiking.com/wp-content/uploads/2025/11/hero-mobile-center.png");
+    background-position: right top;
+    background-size: cover;
+    background-attachment: scroll; /* make sure it's not fixed on mobile */
+    min-height: 80vh;              /* shorter + wider feel */
+  }
+}
+
+
+
+
+
+
+
+/* ============================
+   ADVERTISE PAGE – HENRY HATES HIKING
+   ============================ */
+
+.hh-ad-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Montserrat", sans-serif;
+  color: #0f172a;
+}
+
+/* Hero */
+.hh-ad-hero {
+  background: radial-gradient(circle at top left, #49a977 0, #0f2e2a 55%, #071814 100%);
+  border-radius: 26px;
+  padding: 3.5rem 2rem;
+  color: #ffffff;
+  box-shadow: 0 26px 60px rgba(15, 23, 42, 0.45);
+  margin-bottom: 2.75rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hh-ad-hero::after {
+  content: "";
+  position: absolute;
+  right: -120px;
+  top: -80px;
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, rgba(255,255,255,0.12), transparent 60%);
+  opacity: 0.9;
+}
+
+.hh-ad-hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 620px;
+}
+
+.hh-ad-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.75rem;
+  opacity: 0.85;
+  margin-bottom: 0.6rem;
+}
+
+.hh-ad-title {
+  font-size: clamp(2rem, 3vw, 2.6rem);
+  line-height: 1.1;
+  margin: 0 0 0.9rem;
+}
+
+.hh-ad-subtitle {
+  font-size: 0.98rem;
+  line-height: 1.7;
+  opacity: 0.95;
+  margin: 0 0 1.9rem;
+}
+
+/* Hero buttons */
+.hh-ad-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
+.hh-ad-btn {
+  display: inline-block;
+  padding: 0.8rem 1.7rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.hh-ad-btn-primary {
+  background: #f9fafb;
+  color: #0f2e2a;
+  border-color: rgba(255,255,255,0.24);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.35);
+}
+
+.hh-ad-btn-primary:hover {
+  background: #e5e7eb;
+  transform: translateY(-1px);
+  box-shadow: 0 18px 36px rgba(0,0,0,0.4);
+}
+
+.hh-ad-btn-ghost {
+  background: transparent;
+  color: #e5fdf3;
+  border-color: rgba(229, 253, 243, 0.5);
+}
+
+.hh-ad-btn-ghost:hover {
+  background: rgba(15,15,15,0.18);
+}
+
+/* Stats row */
+.hh-ad-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 2.75rem;
+}
+
+.hh-ad-stat {
+  background: #f3f4f6;
+  border-radius: 16px;
+  padding: 0.9rem 1rem;
+  border: 1px solid rgba(15,23,42,0.03);
+}
+
+.hh-ad-stat-label {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #6b7280;
+  margin-bottom: 0.25rem;
+}
+
+.hh-ad-stat-value {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* Sections */
+.hh-ad-section {
+  margin-bottom: 3rem;
+}
+
+.hh-ad-section-title {
+  font-size: 1.45rem;
+  margin-bottom: 0.5rem;
+}
+
+.hh-ad-section-intro {
+  font-size: 0.97rem;
+  color: #4b5563;
+  margin-bottom: 1.8rem;
+  max-width: 720px;
+}
+
+/* Grid + cards */
+.hh-ad-grid {
+  display: grid;
+  gap: 1.3rem;
+}
+
+.hh-ad-grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.hh-ad-grid-spacing {
+  margin-top: 1.4rem;
+}
+
+.hh-ad-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 1.4rem 1.4rem 1.35rem;
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.hh-ad-card-title {
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+.hh-ad-card-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #6b7280;
+  background: #f3f4f6;
+  border-radius: 999px;
+  padding: 0.25rem 0.75rem;
+}
+
+.hh-ad-card-tag-highlight {
+  background: #ecfdf5;
+  color: #047857;
+}
+
+.hh-ad-card-body {
+  font-size: 0.92rem;
+  color: #4b5563;
+}
+
+.hh-ad-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.1rem 0 0.6rem;
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+.hh-ad-list li {
+  position: relative;
+  padding-left: 1.15rem;
+  margin-bottom: 0.3rem;
+}
+
+.hh-ad-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #2e7e6f;
+}
+
+.hh-ad-card-price {
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.hh-ad-card-note {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin: 0.25rem 0 0;
+}
+
+.hh-ad-card-bundle {
+  background: #f9fafb;
+}
+
+/* Disclaimer text */
+.hh-ad-disclaimer {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-top: 1.3rem;
+}
+
+/* FAQ */
+.hh-ad-faq {
+  display: grid;
+  gap: 1rem;
+}
+
+.hh-ad-faq-item {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.1rem 1.2rem;
+  border: 1px solid rgba(17,24,39,0.06);
+}
+
+.hh-ad-faq-question {
+  font-size: 0.99rem;
+  margin: 0 0 0.35rem;
+}
+
+.hh-ad-faq-answer {
+  font-size: 0.9rem;
+  color: #4b5563;
+  margin: 0;
+}
+
+/* Contact */
+.hh-ad-section-contact {
+  text-align: center;
+}
+
+.hh-ad-contact-inner {
+  background: #0f2e2a;
+  color: #f9fafb;
+  border-radius: 24px;
+  padding: 2.3rem 1.7rem 2.4rem;
+  box-shadow: 0 26px 60px rgba(255, 255, 255, 0.88);
+}
+
+.hh-ad-section-contact .hh-ad-section-title {
+  margin-bottom: 0.5rem;
+}
+
+.hh-ad-section-contact .hh-ad-section-intro {
+  margin: 0 auto 1.6rem;
+  color: rgba(249,250,251,0.9);
+}
+
+.hh-ad-contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.7rem;
+  font-size: 0.9rem;
+}
+
+.hh-ad-contact-list li {
+  margin-bottom: 0.3rem;
+}
+
+.hh-ad-contact-alt {
+  font-size: 0.85rem;
+  margin-top: 0.8rem;
+  color: rgba(249,250,251,0.78);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 900px) {
+  .hh-ad-grid-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hh-ad-hero {
+    padding: 2.6rem 1.7rem;
+  }
+
+  .hh-ad-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .hh-ad-page {
+    padding-inline: 1.1rem;
+  }
+
+  .hh-ad-hero {
+    border-radius: 22px;
+    padding: 2.3rem 1.4rem 2.4rem;
+  }
+
+  .hh-ad-hero-inner {
+    max-width: 100%;
+  }
+
+  .hh-ad-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hh-ad-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hh-ad-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .hh-ad-grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .hh-ad-contact-inner {
+    padding-inline: 1.2rem;
+  }
+}
+
+
+/* Dark header ONLY on Advertise page */
+body.page-id-3457 header.site-header,
+body.page-id-3457 .main-header-bar,
+body.page-id-3457 .ast-primary-header-bar,
+body.page-id-3457 .ast-header-break-point .main-header-bar {
+  background: #0f2e2a !important;           /* dark green */
+  border-bottom: 1px solid rgba(0,0,0,0.25);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+/* Make sure menu items stay readable on that dark bar */
+body.page-id-3457 .main-header-menu > .menu-item > a,
+body.page-id-3457 .ast-builder-menu-1 .menu-item > a {
+  color: #ffffff !important;
+}
+
+body.page-id-3457 .main-header-menu > .menu-item > a:hover,
+body.page-id-3457 .ast-builder-menu-1 .menu-item > a:hover {
+  color: #bbf7d0 !important; /* light green hover */
+}
+
+
+.hh-ad-title {
+    color: rgba(255,255,255,0.88) !important;
+}
+
+.hh-ad-section-title {
+    color: rgba(255,255,255,0.8) !important;
+}
+
+
+
+
+
+
+/************************************
+  FEATURED PARTNERS (CLEAN + STABLE)
+  - No bleed
+  - No wrapper borders
+  - Matches Trails width: 1120px
+*************************************/
+
+.hhh-partners{
+  /* neutral section spacing (no full-bleed tricks) */
+  padding: 64px 16px 84px;
+  background: transparent; /* let your page background be itself */
+}
+
+/* The panel is what creates the “blend”, safely */
+.hhh-partners__panel{
+  width: 100%;
+  max-width: 1120px;          /* MATCHES YOUR FEATURED TRAILS */
+  margin: 0 auto;
+  padding: 44px 34px 34px;
+  border-radius: 32px;
+  box-sizing: border-box;
+
+  /* interior stays light and clean */
+  background: linear-gradient(180deg, #f7f9f8 0%, #ffffff 100%);
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 22px 70px rgba(0,0,0,0.12);
+  position: relative;
+  isolation: isolate; /* keeps effects contained */
+}
+
+/* subtle OUTER glow to blend with whatever is behind it (contained, no bleed) */
+.hhh-partners__panel::before{
+  content:"";
+  position:absolute;
+  inset:-140px -120px;
+  z-index:-1;
+  pointer-events:none;
+
+  /* soft green-ish haze similar to your site vibe */
+  background: radial-gradient(circle at 50% 30%,
+    rgba(3, 27, 25, 0.18) 0%,
+    rgba(3, 27, 25, 0.10) 35%,
+    rgba(3, 27, 25, 0.00) 70%
+  );
+  filter: blur(26px);
+}
+
+/* header */
+.hhh-partners__top{
+  text-align:center;
+  max-width: 860px;
+  margin: 0 auto 26px;
+}
+
+.hhh-partners__badge{
+  display:inline-flex;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(25, 180, 139, 0.14);
+  border: 1px solid rgba(25, 180, 139, 0.25);
+  color: rgba(10, 50, 42, 0.90);
+  margin-bottom: 12px;
+}
+
+.hhh-partners__title{
+  margin: 0 0 10px;
+  font-size: clamp(30px, 4vw, 44px);
+  line-height: 1.1;
+  color: #0b1c1f;
+}
+
+.hhh-partners__sub{
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(11, 28, 31, 0.70);
+}
+
+/* buttons */
+.hhh-partners__cta{
+  margin-top: 18px;
+  display:flex;
+  gap: 12px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.hhh-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding: 12px 18px;
+  border-radius: 14px;
+  font-weight: 800;
+  text-decoration: none !important;
+  min-height: 44px;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+}
+
+.hhh-btn:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 12px 26px rgba(0,0,0,0.14);
+}
+
+.hhh-btn--primary{
+  background: #0b6b57;
+  color: #ffffff !important;
+}
+
+.hhh-btn--primary:hover{
+  background: #095b4a;
+}
+
+.hhh-btn--ghost{
+  background: rgba(255,255,255,0.95);
+  border: 1px solid rgba(0,0,0,0.12);
+  color: #0b1c1f !important;
+}
+
+/* highlights */
+.hhh-partners__highlights{
+  margin: 22px auto 0;
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  text-align:left;
+}
+
+.hhh-hi{
+  border-radius: 16px;
+  padding: 14px;
+  background: rgba(255,255,255,0.85);
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+.hhh-hi__k{
+  font-size: 12px;
+  letter-spacing: .08em;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: rgba(11, 28, 31, 0.55);
+  margin-bottom: 6px;
+}
+
+.hhh-hi__v{
+  font-size: 14px;
+  line-height: 1.4;
+  color: rgba(11, 28, 31, 0.82);
+}
+
+/* logos */
+.hhh-partners__logos{
+  margin-top: 26px;
+  display:grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.hhh-logo{
+  border-radius: 16px;
+  min-height: 70px;
+  display:grid;
+  place-items:center;
+  background: rgba(255,255,255,0.70);
+  border: 1px dashed rgba(0,0,0,0.18);
+}
+
+.hhh-logo span{
+  font-weight: 800;
+  font-size: 14px;
+  color: rgba(11, 28, 31, 0.35);
+}
+
+/* bottom row */
+.hhh-partners__bottom{
+  margin-top: 26px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(0,0,0,0.10);
+  display:grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 16px;
+  align-items:center;
+}
+
+.hhh-bottom__title{
+  margin: 0 0 6px;
+  font-size: 18px;
+  color: #0b1c1f;
+}
+
+.hhh-bottom__text{
+  margin: 0;
+  color: rgba(11, 28, 31, 0.70);
+  line-height: 1.5;
+}
+
+.hhh-bottom__right{
+  display:grid;
+  gap: 10px;
+}
+
+.hhh-btn--wide{ width: 100%; }
+
+/* responsive */
+@media (max-width: 900px){
+  .hhh-partners__highlights{ grid-template-columns: 1fr; }
+  .hhh-partners__logos{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hhh-partners__bottom{ grid-template-columns: 1fr; }
+  .hhh-partners__panel{ padding: 36px 18px 26px; }
+}
+
+
+
+
+
+/* =====================================
+   Partner logo placeholder animation
+   (safe, contained, no bleed)
+===================================== */
+
+.hhh-logo{
+  position: relative;
+  overflow: hidden; /* ensures animation stays inside box */
+}
+
+/* shimmer sweep */
+.hhh-logo::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background: linear-gradient(
+    100deg,
+    rgba(255,255,255,0.00) 40%,
+    rgba(255,255,255,0.55) 50%,
+    rgba(255,255,255,0.00) 60%
+  );
+
+  transform: translateX(-100%);
+  animation: hhhLogoShimmer 2.8s ease-in-out infinite;
+}
+
+/* animation keyframes */
+@keyframes hhhLogoShimmer{
+  0%{
+    transform: translateX(-120%);
+  }
+  100%{
+    transform: translateX(120%);
+  }
+}
+
+
+
+
+
+
+
+/************************************
+  FOUNDING PARTNERS INFO PAGE
+  Clean, contained, matches 1120px
+*************************************/
+
+.hhh-fp{
+  padding: 56px 0 88px;
+}
+
+/* shared container */
+.hhh-fp__wrap{
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+/* typography */
+.hhh-fp__h1{
+  margin: 10px 0 12px;
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: #0b1c1f;
+}
+
+.hhh-fp__h2{
+  margin: 0 0 8px;
+  font-size: clamp(24px, 3vw, 34px);
+  line-height: 1.15;
+  color: #0b1c1f;
+}
+
+.hhh-fp__h3{
+  margin: 0 0 8px;
+  font-size: 18px;
+  line-height: 1.25;
+  color: #0b1c1f;
+}
+
+.hhh-fp__p{
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(11, 28, 31, 0.72);
+}
+
+.hhh-fp__lead{
+  margin: 0 0 16px;
+  font-size: 17px;
+  line-height: 1.7;
+  color: rgba(11, 28, 31, 0.72);
+}
+
+/* buttons */
+.hhh-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding: 12px 18px;
+  border-radius: 14px;
+  font-weight: 800;
+  text-decoration: none !important;
+  min-height: 44px;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+}
+
+.hhh-btn:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 12px 26px rgba(0,0,0,0.14);
+}
+
+.hhh-btn--primary{
+  background: #0b6b57;
+  color: #ffffff !important;
+}
+
+.hhh-btn--primary:hover{
+  background: #095b4a;
+}
+
+.hhh-btn--ghost{
+  background: rgba(255,255,255,0.95);
+  border: 1px solid rgba(0,0,0,0.12);
+  color: #0b1c1f !important;
+}
+
+.hhh-btn--wide{
+  width: 100%;
+}
+
+/* hero */
+.hhh-fp-hero{
+  display: grid;
+  grid-template-columns: 1.25fr .75fr;
+  gap: 16px;
+  align-items: start;
+  margin: 0 0 26px;
+}
+
+.hhh-fp-badge{
+  display: inline-flex;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(25, 180, 139, 0.14);
+  border: 1px solid rgba(25, 180, 139, 0.25);
+  color: rgba(10, 50, 42, 0.90);
+}
+
+.hhh-fp__cta{
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 14px 0 18px;
+}
+
+.hhh-fp-kpis{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 12px;
+}
+
+.hhh-kpi{
+  border-radius: 16px;
+  padding: 14px;
+  background: rgba(255,255,255,0.85);
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+.hhh-kpi__k{
+  font-size: 12px;
+  letter-spacing: .08em;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: rgba(11, 28, 31, 0.55);
+  margin-bottom: 6px;
+}
+
+.hhh-kpi__v{
+  font-size: 14px;
+  line-height: 1.4;
+  color: rgba(11, 28, 31, 0.84);
+}
+
+/* right card */
+.hhh-fp-card{
+  border-radius: 24px;
+  padding: 18px;
+  background: linear-gradient(180deg, #f7f9f8 0%, #ffffff 100%);
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 18px 55px rgba(0,0,0,0.10);
+  position: sticky;
+  top: 18px;
+}
+
+.hhh-fp-card__title{
+  font-weight: 900;
+  color: #0b1c1f;
+  font-size: 16px;
+}
+
+.hhh-fp-card__sub{
+  color: rgba(11, 28, 31, 0.65);
+  font-size: 13px;
+  margin-top: 2px;
+}
+
+.hhh-fp-list{
+  list-style: none;
+  padding: 0;
+  margin: 14px 0 14px;
+}
+
+.hhh-fp-list li{
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 8px 0;
+  color: rgba(11, 28, 31, 0.78);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.hhh-dot{
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(25, 180, 139, 0.40);
+  border: 1px solid rgba(25, 180, 139, 0.35);
+  margin-top: 4px;
+  flex: 0 0 auto;
+}
+
+.hhh-fp-card__cta{
+  display: grid;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.hhh-fp-note{
+  margin-top: 10px;
+  font-size: 13px;
+  color: rgba(11, 28, 31, 0.62);
+}
+
+.hhh-fp-note a{
+  color: #0b6b57;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+/* strip */
+.hhh-fp-strip{
+  border-radius: 24px;
+  padding: 18px;
+  background: rgba(255,255,255,0.85);
+  border: 1px solid rgba(0,0,0,0.08);
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 14px;
+  margin: 0 0 22px;
+}
+
+.hhh-mini{
+  border-radius: 18px;
+  padding: 14px;
+  background: rgba(255,255,255,0.92);
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+.hhh-mini__k{
+  font-size: 12px;
+  letter-spacing: .08em;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: rgba(11, 28, 31, 0.55);
+  margin-bottom: 6px;
+}
+
+.hhh-mini__v{
+  font-size: 14px;
+  line-height: 1.4;
+  color: rgba(11, 28, 31, 0.84);
+}
+
+/* sections */
+.hhh-fp-section{
+  border-radius: 32px;
+  padding: 26px;
+  background: linear-gradient(180deg, #f7f9f8 0%, #ffffff 100%);
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 18px 60px rgba(0,0,0,0.10);
+  margin: 0 0 22px;
+}
+
+.hhh-fp-section__head{
+  margin-bottom: 16px;
+}
+
+/* grids */
+.hhh-grid-3{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.hhh-grid-2{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.hhh-place{
+  border-radius: 20px;
+  padding: 16px;
+  background: rgba(255,255,255,0.90);
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+.hhh-place__top{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.hhh-place__icon{
+  width: 38px;
+  height: 38px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: rgba(25, 180, 139, 0.14);
+  border: 1px solid rgba(25, 180, 139, 0.20);
+}
+
+.hhh-place__title{
+  font-weight: 900;
+  color: #0b1c1f;
+  font-size: 16px;
+}
+
+.hhh-place__text{
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(11, 28, 31, 0.72);
+}
+
+.hhh-pill{
+  display: inline-flex;
+  margin-top: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .03em;
+  background: rgba(25, 180, 139, 0.12);
+  border: 1px solid rgba(25, 180, 139, 0.20);
+  color: rgba(10, 50, 42, 0.90);
+}
+
+.hhh-block{
+  border-radius: 20px;
+  padding: 16px;
+  background: rgba(255,255,255,0.90);
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+.hhh-divider{
+  height: 1px;
+  background: rgba(0,0,0,0.08);
+  margin: 18px 0;
+}
+
+
+/* steps */
+.hhh-steps{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 12px;
+}
+
+.hhh-step{
+  border-radius: 22px;
+  padding: 16px;
+  background: rgba(255,255,255,0.92);
+  border: 1px solid rgba(0,0,0,0.08);
+  display: flex;
+  gap: 12px;
+}
+
+.hhh-step__num{
+  width: 38px;
+  height: 38px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  font-weight: 950;
+  background: rgba(25, 180, 139, 0.14);
+  border: 1px solid rgba(25, 180, 139, 0.20);
+  color: rgba(10, 50, 42, 0.90);
+  flex: 0 0 auto;
+}
+
+.hhh-step__title{
+  font-weight: 950;
+  color: #0b1c1f;
+  margin-bottom: 4px;
+}
+
+.hhh-step__text{
+  color: rgba(11, 28, 31, 0.70);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* FAQ */
+.hhh-faq{
+  display: grid;
+  gap: 10px;
+}
+
+.hhh-qa{
+  border-radius: 18px;
+  padding: 14px 14px;
+  background: rgba(255,255,255,0.92);
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+.hhh-qa summary{
+  cursor: pointer;
+  font-weight: 900;
+  color: #0b1c1f;
+  list-style: none;
+}
+
+.hhh-qa summary::-webkit-details-marker{
+  display:none;
+}
+
+.hhh-qa summary:after{
+  content: "＋";
+  float: right;
+  opacity: .65;
+}
+
+.hhh-qa[open] summary:after{
+  content: "—";
+}
+
+.hhh-qa__a{
+  margin-top: 10px;
+  color: rgba(11, 28, 31, 0.72);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+/* final CTA */
+.hhh-fp-final{
+  border-radius: 32px;
+  padding: 22px;
+  background: rgba(11, 107, 87, 0.08);
+  border: 1px solid rgba(11, 107, 87, 0.14);
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 14px;
+  align-items: center;
+}
+
+.hhh-fp-final__right{
+  display: grid;
+  gap: 10px;
+}
+
+/* responsiveness */
+@media (max-width: 980px){
+  .hhh-fp-hero{
+    grid-template-columns: 1fr;
+  }
+  .hhh-fp-card{
+    position: relative;
+    top: 0;
+  }
+  .hhh-fp-strip{
+    grid-template-columns: 1fr;
+  }
+  .hhh-grid-3{
+    grid-template-columns: 1fr;
+  }
+  .hhh-grid-2{
+    grid-template-columns: 1fr;
+  }
+  .hhh-tiers{
+    grid-template-columns: 1fr;
+  }
+  .hhh-steps{
+    grid-template-columns: 1fr;
+  }
+  .hhh-fp-final{
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Hide header only on Founding Partners page */
+.page-id-3571 header,
+.page-id-3571 #masthead,
+.page-id-3571 .site-header,
+.page-id-3571 .elementor-location-header{
+  display: none !important;
+}
+
+
+
+
+/* ========== Founding Partner page: match homepage stretched sections ========== */
+
+/* Make the page’s main Astra container truly full width AND keep it centered */
+.page-id-3571 .site-content .ast-container {
+  max-width: none !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 32px !important;
+  padding-right: 32px !important;
+  box-sizing: border-box;
+}
+
+/* If your custom HTML sits in this container, make it a wide centered “content” column */
+.page-id-3571 .hhh-founding-page {
+  width: 100% !important;
+  max-width: 1400px !important;  /* adjust if your Featured Trails is wider/narrower */
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box;
+}
+
+/* === Founding Partner page: TRUE full-width (stretched) like homepage sections === */
+.page-id-3571 .hhh-founding-page {
+  width: 100vw !important;
+  max-width: 100vw !important;
+  margin-left: calc(50% - 50vw) !important;
+  margin-right: calc(50% - 50vw) !important;
+  padding-left: 32px !important;
+  padding-right: 32px !important;
+  box-sizing: border-box;
+}
+
+/* Optional: keep inner text from becoming absurdly wide */
+.page-id-3571 .hhh-founding-page .hhh-inner {
+  max-width: 1400px;   /* match your homepage feel */
+  margin: 0 auto;
+}
+
+
+
+/* =========================
+   FOUNDING PARTNER TIERS
+   ========================= */
+
+/* section wrap (controls max width) */
+.page-id-3571 .hhh-fp-tiers-wrap{
+  width: 100%;
+  max-width: 1500px; /* increase to 1600px if you want wider */
+  margin: 0 auto;
+  padding: 10px 12px 24px;
+  box-sizing: border-box;
+}
+
+.page-id-3571 .hhh-fp-tiers-title{
+  text-align: center;
+  margin: 0 0 16px;
+  font-size: clamp(28px, 3vw, 44px);
+  font-weight: 950;
+  letter-spacing: -0.02em;
+  color: #0b1c1f;
+}
+
+/* grid */
+.page-id-3571 .hhh-tier-section{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  align-items: stretch;
+}
+
+/* card */
+.page-id-3571 .hhh-tier{
+  border-radius: 24px;
+  padding: 18px;
+  background: rgba(255,255,255,0.92);
+  border: 1px solid rgba(0,0,0,0.10);
+  box-shadow: 0 12px 36px rgba(0,0,0,0.08);
+  box-sizing: border-box;
+  min-width: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+/* top color accents */
+.page-id-3571 .hhh-tier::before{
+  content: "";
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%;
+  height: 64px;
+  opacity: 0.20;
+}
+
+.page-id-3571 .hhh-tier--t1::before{ background: #17b3a5; }
+.page-id-3571 .hhh-tier--t2::before{ background: #0b84b6; }
+.page-id-3571 .hhh-tier--t3::before{ background: #7b7fbe; }
+
+/* featured emphasis */
+.page-id-3571 .hhh-tier--featured{
+  border: 1px solid rgba(25, 180, 139, 0.28);
+  box-shadow: 0 18px 50px rgba(11, 107, 87, 0.18);
+  transform: translateY(-2px);
+}
+
+/* badge */
+.page-id-3571 .hhh-tier__badge{
+  display: inline-flex;
+  padding: 7px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  background: rgba(0,0,0,0.06);
+  border: 1px solid rgba(0,0,0,0.10);
+  color: rgba(11, 28, 31, 0.70);
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.page-id-3571 .hhh-tier__badge--featured{
+  background: rgba(25, 180, 139, 0.14);
+  border: 1px solid rgba(25, 180, 139, 0.25);
+  color: rgba(10, 50, 42, 0.90);
+}
+
+/* title + price */
+.page-id-3571 .hhh-tier__title{
+  font-weight: 950;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #0b1c1f;
+  margin: 0 0 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.page-id-3571 .hhh-tier__price{
+  margin: 0 0 12px;
+  font-weight: 950;
+  font-size: 22px;
+  color: #0b1c1f;
+  background: rgba(255,255,255,0.92);
+  border: 1px solid rgba(0,0,0,0.10);
+  display: inline-block;
+  padding: 10px 12px;
+  border-radius: 14px;
+  position: relative;
+  z-index: 1;
+}
+
+/* description */
+.page-id-3571 .hhh-tier__desc{
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(11, 28, 31, 0.68);
+  margin: 0 0 10px;
+  position: relative;
+  z-index: 1;
+}
+
+/* list */
+.page-id-3571 .hhh-tier__list{
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.page-id-3571 .hhh-tier__list li{
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 8px 0;
+  color: rgba(11, 28, 31, 0.78);
+  font-size: 14px;
+  line-height: 1.4;
+  border-top: 1px solid rgba(0,0,0,0.06);
+}
+
+.page-id-3571 .hhh-tier__list li:first-child{
+  border-top: none;
+}
+
+.page-id-3571 .hhh-tier__list li::before{
+  content: "✓";
+  flex: 0 0 auto;
+  font-weight: 900;
+  opacity: 0.9;
+  margin-top: 1px;
+}
+
+/* indented “subitems” under the placement line */
+.page-id-3571 .hhh-tier__list .hhh-tier__subitem{
+  padding-left: 22px;
+  border-top: none;
+}
+
+.page-id-3571 .hhh-tier__list .hhh-tier__subitem::before{
+  content: "•";
+  opacity: 0.7;
+  margin-top: 0;
+}
+
+/* best for */
+.page-id-3571 .hhh-tier__bestfor{
+  margin: 12px 0 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(11, 28, 31, 0.78);
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================
+   CALLOUT
+   ========================= */
+.page-id-3571 .hhh-fp-callout{
+  margin-top: 16px;
+  border-radius: 24px;
+  padding: 16px;
+  background: rgba(11, 107, 87, 0.08);
+  border: 1px solid rgba(11, 107, 87, 0.14);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  box-sizing: border-box;
+}
+
+.page-id-3571 .hhh-fp-callout__title{
+  font-weight: 950;
+  color: #0b1c1f;
+  margin-bottom: 4px;
+}
+
+.page-id-3571 .hhh-fp-callout__text{
+  color: rgba(11, 28, 31, 0.70);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.page-id-3571 .hhh-fp-callout__btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 14px;
+  border-radius: 14px;
+  font-weight: 900;
+  text-decoration: none !important;
+  background: rgba(11, 107, 87, 0.14);
+  border: 1px solid rgba(11, 107, 87, 0.22);
+  color: #0b1c1f;
+  white-space: nowrap;
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+@media (max-width: 1024px){
+  .page-id-3571 .hhh-tier-section{
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .page-id-3571 .hhh-fp-callout{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .page-id-3571 .hhh-fp-callout__btn{
+    width: 100%;
+  }
+}
+
+
+
+
+/* ==========================================
+   ADVERTISE PAGE — MATCH FEATURED TRAILS WIDTH
+   Featured Trails panel uses max-width: 1120px
+   ========================================== */
+
+/* 1) Stop the global 400px padding from choking this page */
+body.page-id-3457{
+  --pad-d: 24px;
+  --pad-t: 18px;
+  --pad-m: 14px;
+}
+
+/* 2) Make the Advertise page wrapper match Featured Trails width */
+body.page-id-3457 .hh-ad-page{
+  max-width: 1120px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Optional: if you want the SAME side gutters as Featured Trails panel padding feel */
+@media (min-width: 768px){
+  body.page-id-3457 .hh-ad-page{
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+  }
+}
+
+
+
+
+/* ==========================================
+   CONTACT PAGE — WIDE FORM
+   ========================================== */
+
+body.page-id-220 #wpforms-form-3318 {
+  max-width: 1120px !important;   /* match Featured Trails */
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Optional: slightly tighter padding so it doesn't feel chunky */
+body.page-id-220 #wpforms-form-3318 {
+  padding: 32px 36px !important;
+}
+
+/* Mobile stays comfortable */
+@media (max-width: 768px){
+  body.page-id-220 #wpforms-form-3318 {
+    padding: 22px 18px !important;
+  }
+}
